@@ -1,0 +1,75 @@
+{
+ "name"         : "Search [COLOR FF0084FF]-[/COLOR] xStream ([COLOR FF0084FF]Q[/COLOR])",
+ "repository"   : "repository.xstream",
+ "plugin"       : "plugin.video.xstream",
+ "priority"     : 900,
+ "id"           : "search.xstream.q",
+ "filters"      : {},
+ "postprocess"  : "",
+ "movies"       : [
+  [
+   {
+    "language"  : "de",
+    "link"      : "plugin://plugin.video.xstream/?function=globalSearch&params=0&site=globalSearch&title=Globale%20Suche&query={title}",
+    "steps"     : [
+     "{title}$$I$$.*"
+     ],
+    "action"    : "PLAY"
+   },
+   {
+    "language"  : "de",
+    "link"      : "plugin://plugin.video.xstream/?function=globalSearch&params=0&site=globalSearch&title=Globale%20Suche&query={title}",
+    "steps"     : [
+     "{title}.*"
+     ],
+    "action"    : "PLAY"
+   },
+   {
+    "language"  : "de",
+    "link"      : "plugin://plugin.video.xstream/?function=globalSearch&params=0&site=globalSearch&title=Globale%20Suche&query={title}",
+    "steps"     : [
+     ".*{title}.*"
+     ],
+    "action"    : "PLAY"
+   }
+  ]
+ ],
+ "tvshows"      : [
+  [
+
+   {
+    "language"  : "de",
+    "link"      : "plugin://plugin.video.xstream/?function=globalSearch&params=0&site=globalSearch&title=Globale%20Suche&query={clearname}",
+    "steps"     : [
+     "{clearname}$$I$$ kkiste_to$$/I$$",
+     "Staffel {season}",
+     ".*- S{season}E{episode}"
+     ],
+    "action"    : "PLAY"
+   },
+   {
+    "language"  : "de",
+    "link"      : "plugin://plugin.video.xstream/?function=globalSearch&params=0&site=globalSearch&title=Globale%20Suche&query={clearname}",
+    "steps"     : [
+     "{clearname}$$I$$ burning_series_org$$/I$$",
+     ".* - Staffel {season}",
+     "{episode} - .*"
+     ],
+    "action"    : "PLAY"
+   },
+   {
+    "language"  : "de",
+    "link"      : "plugin://plugin.video.xstream/?function=globalSearch&params=0&site=globalSearch&title=Globale%20Suche&query={clearname}",
+    "steps"     : [
+     "{clearname}$$I$$ seriesever_net$$/I$$",
+     "Staffel {season}",
+     "Episode {episode} - .*"
+     ],
+    "action"    : "PLAY"
+   }
+  ]
+ ],
+ "musicvideos"  : [],
+ "music"        : [],
+ "live"         : []
+}
